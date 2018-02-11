@@ -1,0 +1,32 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.head{
+	width: 1920px;
+	height: 55px;
+	background-color:#2F4056;
+	float: left;
+	color: #FFF;
+	line-height: 54px;
+	margin-bottom: 20px;
+}
+.head ul li{
+	float: left;
+	font-size: 16px;
+	margin-left: 40px;
+	list-style: none;
+}
+
+.head ul li a{
+	color:#FFF;
+	text-decoration: none;
+}
+
+.layui-form-item{
+	width: 1000px;
+}
+
+.catalog{
+
+}

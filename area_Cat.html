@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>场馆一览-教学楼</title>
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="area_building_southone.css">
+	<script type="text/javascript" src="layui/layui.all.js">
+    </script>	
+</head>
+<body>
+	<div class="head">
+	 	<ul >
+  			<li><a href="">首页</a></li>
+  			<li ><a href="">场馆</a></li>
+  			<li><a href="">场地预约</a></li>
+ 			<li ><a href="">培训</a></li>
+            <li ><a href="">相册</a></li>
+            <li ><a href="">地图</a></li>
+  			<li><a href="">账户中心</a></li>
+		</ul>
+ 	</div>
+ 	<div class="left">
+
+       <form>
+		<ul class="layui-nav layui-nav-tree" lay-filter="test" style="border-radius: 0px;height: 900px;float: left;">
+		<!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+  			<li class="layui-nav-item layui-nav-itemed">
+   			 <a href="area.html">场馆</a>
+    		<dl class="layui-nav-child">
+     		 <dd><a href="area_building.html">教学楼</a></dd>
+      		 <dd><a href="area_gym.html">体育场馆</a></dd>
+      		  <dd><a href="area_perform.html">表演场馆</a></dd>  		
+      		 <dd><a href="">跳转</a></dd>
+   		    </dl>
+  			
+		</ul>
+     </form>
+     </div>
+
+      <div class="right_top">
+     	<span class="layui-breadcrumb" lay-separator="-">
+ 			<a href="">首页</a>
+ 			<a href="">场馆</a>
+ 			<a><cite>教学楼</cite></a>
+		</span>
+
+		<hr class="layui-bg-gray">
+
+     </div>
+
+       <div id="jiaoxueloumenu" class="right_middle1">
+         <table border="0" >
+          <tr>
+            <td align="center"><img src="images/例图1.jpg" onclick="opentab(1)"></td>
+            <td align="center"><img src="images/例图2.jpg" onclick="opentab(2)"></td>
+             <td align="center"><img src="images/例图3.jpg" onclick="opentab(3)"></td>
+          </tr>
+          <tr>
+            <td align="center"><h1>南一教学楼</h1></td>
+            <td align="center"><h1>南一教学楼</h1></td>
+            <td align="center"><h1>南一教学楼</h1></td>
+          </tr>
+         </table> 
+
+         <table border="0" >
+          <tr>
+            <td align="center"><img src="images/例图1.jpg"></td>
+            <td align="center"><img src="images/例图2.jpg"></td>
+             <td align="center"><img src="images/例图3.jpg"></td>
+          </tr>
+          <tr>
+            <td align="center"><h1>南一教学楼</h1></td>
+            <td align="center"><h1>南一教学楼</h1></td>
+            <td align="center"><h1>南一教学楼</h1></td>
+          </tr>
+         </table> 
+
+             
+      </div>
+
+      <div id="nanyidiv" class="right_middle" style="display: none;">    
+         <table border="0">
+          <tr>
+            <td align="center"><img src="images/例图1.jpg"></td>
+          </tr>
+          <tr>
+            <td align="center"><h1>南一教学楼</h1></td>
+          </tr>
+         </table> 
+
+         <fieldset class="layui-elem-field">
+          <legend>场馆功能</legend>
+           <div class="layui-field-box">
+          
+           </div>
+         </fieldset>
+     
+        <hr class="layui-bg-gray" >
+
+        <div class="right_middle_a">
+           <a class="layui-btn " >我要预约</a>
+           <a class="layui-btn " onclick="showtable()">查看场馆预约情况</a>
+        </div>  
+          
+
+       <table id="nanyitable" class="layui-table stable" style="display:none;">
+          <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>预订人</th>
+              <th>场地</th>
+              <th>所在场馆</th>
+              <th>开始日期</th>
+              <th>结束日期</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <td>yjj</td>
+              <td>a101</td>
+              <td>南一</td>
+              <td>2018-02-01</td>
+              <td>2018-02-03</td>
+            </tr>
+          </tbody>
+        </table>                      
+
+      </div>
+
+       <div id="nanerdiv" class="right_middle" style="display: none;">    
+         <table border="0">
+          <tr>
+            <td align="center"><img src="images/例图2.jpg"></td>
+          </tr>
+          <tr>
+            <td align="center"><h1>南二教学楼</h1></td>
+          </tr>
+         </table> 
+
+         <fieldset class="layui-elem-field">
+          <legend>场馆功能</legend>
+           <div class="layui-field-box">
+          
+           </div>
+         </fieldset>
+     
+        <hr class="layui-bg-gray" >
+     
+       <a href="http://www.layui.com" class="layui-btn">我要预约</a>
+       <a class="layui-btn" onclick="showtable()">查看场馆预约情况</a>
+
+
+       <table id="nanyitable" class="layui-table stable" style="display:none;">
+          <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>预订人</th>
+              <th>场地</th>
+              <th>所在场馆</th>
+              <th>开始日期</th>
+              <th>结束日期</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <td>yjj</td>
+              <td>a101</td>
+              <td>南二</td>
+              <td>2018-02-01</td>
+              <td>2018-02-03</td>
+            </tr>
+          </tbody>
+        </table>                       
+      </div>
+      
+
+      <div id="beiyidiv" class="right_middle" style="display: none;">    
+         <table border="0">
+          <tr>
+            <td align="center"><img src="images/例图3.jpg"></td>
+          </tr>
+          <tr>
+            <td align="center"><h1>北一教学楼</h1></td>
+          </tr>
+         </table> 
+
+         <fieldset class="layui-elem-field">
+          <legend>场馆功能</legend>
+           <div class="layui-field-box">
+          
+           </div>
+         </fieldset>
+     
+        <hr class="layui-bg-gray" >
+     
+       <a href="http://www.layui.com" class="layui-btn">我要预约</a>
+       <a class="layui-btn" onclick="showtable()">查看场馆预约情况</a>
+
+
+       <table id="nanyitable" class="layui-table stable" style="display:none;">
+          <colgroup>
+            <col width="150">
+            <col width="200">
+            <col>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>预订人</th>
+              <th>场地</th>
+              <th>所在场馆</th>
+              <th>开始日期</th>
+              <th>结束日期</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <tr>
+              <td>yjj</td>
+              <td>a101</td>
+              <td>北一</td>
+              <td>2018-02-01</td>
+              <td>2018-02-03</td>
+            </tr>
+          </tbody>
+        </table>                
+      </div>
+
+      <img src=""  onclick="showPic(this)" alt="">
+
+      <script>
+      //注意：导航 依赖 element 模块，否则无法进行功能性操作
+      layui.use('element', function(){
+        var element = layui.element;
+        element.render();
+        
+        //…
+      });
+
+
+      function opentab(name){
+        // 隐藏菜单栏
+        document.getElementById('jiaoxueloumenu').style.display = 'none';
+        // 打开相应页面
+        switch (name) {
+          case 1:
+            document.getElementById('nanyidiv').style.display = 'block';
+            break;
+          case 2:
+            document.getElementById('nanerdiv').style.display = 'block';
+            break;
+          case 3:
+            document.getElementById('beiyidiv').style.display = 'block';
+            break;
+          default:
+            // statements_def
+            break;
+        }
+      }
+
+       function showtable(){
+          // table class选择器数组
+          let stable = document.getElementsByClassName('stable')
+          stable[0].style.display = 'inline-block';
+          stable[1].style.display = 'inline-block';
+          stable[2].style.display = 'inline-block';
+          //document.getElementById('nanyitable').style.display = 'inline-block'
+        }
+      </script>
+</body>
+</html>

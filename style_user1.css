@@ -1,0 +1,63 @@
+.head{
+	width: 1920px;
+	height: 55px;
+	background-color:#2F4056;
+	float: left;
+	color: #FFF;
+
+}
+
+.head ul li a{
+	float: left;
+	font-size: 16px;
+	margin-left: 40px;
+	margin-top: 16px;
+	color:#FFF;
+}
+.left{
+	display: inline-block;
+	float: left;
+}
+
+.right_top{
+	display: inline-block;
+	float: left;
+    padding-left: 15px;
+	margin-top: 15px;
+	width: 1600px;
+	height: 45px;
+}
+
+.right_middle{
+	float: left;
+	margin-left: 15px;
+
+	width: 1500px;
+	height: 700px;
+	border: 1px solid #000;
+	background-color: #FFF;	
+}
+.right_middle form{
+	float: left;
+	margin-left: 50px;
+	margin-top: 20px;
+}
+
+.right_middle p{
+	font-family: '微软雅黑';
+	font-size: 18px;
+	margin-left: 10px;
+	padding-bottom: 30px;
+}
+
+.layui-form-item{
+	width: 500px;
+	margin-bottom: 20px;
+}
+
+.bottom{
+	float: left;
+	width: 1920px;
+	height: 100px;
+	background-color: #000000;
+}

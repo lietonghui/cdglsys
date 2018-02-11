@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>场馆预定</title>
+	<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="style_book.css">
+	<script type="text/javascript" src="layui/layui.all.js">
+    </script>
+</head>
+<body>
+	<div class="head">	
+	 	<ul >
+  			<li><a href="">首页</a></li>
+  			<li ><a href="">场馆</a></li>
+  			<li><a href="">场地预约</a></li>
+ 			<li ><a href="">培训</a></li>
+            <li ><a href="">相册</a></li>
+            <li ><a href="">地图</a></li>
+  			<li><a href="">账户中心</a></li>
+		</ul>
+ 	</div>
+
+   <div class="middle">
+	  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+ 	   <legend>场地预约</legend>
+	  </fieldset>
+ 
+	<form class="layui-form" action="">
+  		<div class="layui-form">
+  			<div class="layui-form-item">
+    			<div class="layui-inline">
+      			<label class="layui-form-label">预约日期</label>
+      			 <div class="layui-input-inline">
+        		<input type="text" class="layui-input" id="test1" placeholder="yyyy-MM-dd">
+     		   </div>
+    	     </div>
+            </div>
+       </div>
+  
+  <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">预约课时</label>
+      <div class="layui-input-inline">
+       <select name="interest" lay-filter="aihao">
+        <option value=""></option>
+        <option value="0" selected="">第一节</option>
+        <option value="1" >第二节</option>
+        <option value="2">第三节</option>
+        <option value="3">第四节</option>
+        <option value="4">第五节</option>
+         <option value="5">第六节</option>
+           <option value="6">第七节</option>
+            <option value="7">第八节</option>
+      </select>
+      </div>
+    </div>
+
+    <h1 style="display: inline;margin-right: 18px;">到</h1>
+
+    <div class="layui-inline">
+      <div class="layui-input-inline">
+         <select name="interest" lay-filter="aihao">
+       <option value=""></option>
+        <option value="0" >第一节</option>
+        <option value="1" selected="">第二节</option>
+        <option value="2">第三节</option>
+        <option value="3">第四节</option>
+        <option value="4">第五节</option>
+         <option value="5">第六节</option>
+           <option value="6">第七节</option>
+            <option value="7">第八节</option>
+      </select>
+      </div>
+    </div>
+  </div>
+  
+ <div class="layui-form-item">
+    <div class="layui-inline">
+      <label class="layui-form-label">地点</label>
+      <div class="layui-input-inline">
+        <select name="quiz">
+          <option value="">请选择场馆</option>
+          <optgroup label="教学楼">
+            <option value="南一教学楼">南一教学楼</option>
+            <option value="南二教学楼">南二教学楼</option>
+            <option value="北一教学楼">北一教学楼</option>
+            <option value="北二教学楼">北二教学楼</option>
+          </optgroup>
+          <optgroup label="表演场馆">
+            <option value="音乐厅">音乐厅</option>
+            <option value="体育馆舞台">体育馆舞台</option>
+             <option value="黎灿">黎灿</option>
+          </optgroup>
+          <optgroup label="体育场馆">
+            <option value="西区田径场">西区田径场</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+ </div>
+  
+  <div class="layui-form-item">
+    <label class="layui-form-label">举办活动</label>
+    <div class="layui-input-block">
+      <input name="title" class="layui-input" type="text" placeholder="请输入标题" autocomplete="off" lay-verify="title">
+    </div>
+  </div>
+</form>
+
+  <div class="catalog">
+    
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<script>
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+  form.render()
+  //日期
+  laydate.render({
+    elem: '#date'
+  });
+  laydate.render({
+    elem: '#date1'
+  });
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');
+ 
+  //自定义验证规则
+  form.verify({
+    title: function(value){
+      if(value.length < 5){
+        return '标题至少得5个字符啊';
+      }
+    }
+    ,pass: [/(.+){6,12}$/, '密码必须6到12位']
+    ,content: function(value){
+      layedit.sync(editIndex);
+    }
+  });
+  
+  //监听指定开关
+  form.on('switch(switchTest)', function(data){
+    layer.msg('开关checked：'+ (this.checked ? 'true' : 'false'), {
+      offset: '6px'
+    });
+    layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+  });
+  
+  //监听提交
+  form.on('submit(demo1)', function(data){
+    layer.alert(JSON.stringify(data.field), {
+      title: '最终的提交信息'
+    })
+    return false;
+  });
+  
+  
+});
+</script>
+
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+  
+  //常规用法
+  laydate.render({
+    elem: '#test1'
+  });
+})
+</script>
+
+
+
+</body>
+</html>

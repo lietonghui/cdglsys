@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>场地管理系统首页</title>
+	<link rel="stylesheet" href="layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="style_index.css">
+	<script type="text/javascript" src="layui/layui.all.js">
+    </script>
+</head>
+<style>
+	body{
+		background-image: url(images/background4.jpg);
+		background-repeat:no-repeat;
+		background-size: cover;
+	}
+</style>
+<body>
+
+   <div class="indexbox1">
+     <p>场地管理系统</p>
+
+     <form class="layui-form" action="">
+      	<div class="layui-form-item">
+       		<label class="layui-form-label">账号</label>
+       		<div class="layui-input-block">
+       		<input type="text" name="title" required  lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline">
+            <input type="password" name="password" required lay-verify="required"  autocomplete="off" class="layui-input">
+            </div>
+        <div class="layui-form-mid layui-word-aux">辅助文字</div>
+       </div>
+
+
+ 		<div class="layui-form-item">
+    <label class="layui-form-label" style="margin-left: 15px;">身份：</label>
+    <div class="layui-input-block">
+      <input type="radio" name="identity" value="用户" title="用户">
+      <input type="radio" name="identity" value="管理员" title="管理员" checked>
+    </div>
+  </div>
+
+        <div class="layui-form-item">
+          <div class="layui-input-block">
+         <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+         <button class="layui-btn" lay-submit lay-filter="formDemo">注册</button>
+          </div>
+        </div>
+
+      </form>
+	</div>
+
+  <script>
+ //Demo
+layui.use('form', function(){
+  var form = layui.form;
+  form.render()
+  
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
+</script>
+</body>
+</html>

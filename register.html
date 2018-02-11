@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>register</title>
+  <link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+  <link rel="stylesheet" type="text/css" href="style_register.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+  <script type="text/javascript" src="layui/layui.all.js">
+    </script>
+</head>
+<body>
+  <div class="head"></div>
+  <div class="middle">
+    <div class="inside">
+      <div class="inside1">
+        <h1>欢迎注册大学场地管理系统账号</h1>
+        <h2>已有账户</h2>
+        <div class="layui-form-item" style="margin-left:-100px;width:50px;display: inline-block; ">
+                 <div class="layui-input-block" >
+                  <button class="layui-btn layui-btn-normal" lay-submit   lay-filter="formDemo" onclick="window.location.href='index.html'">立即登录</button>
+                </div>
+              </div>
+            </div>
+
+      <hr class="layui-bg-gray">
+
+           <div class="inside2">
+      <form class="layui-form" action="">
+          <div class="layui-form-item">
+             <label class="layui-form-label">学号/工号</label>
+            <div class="layui-input-block">
+             <input type="text" name="title" id="loginname" required  lay-verify="required" placeholder="请输入11位数字" autocomplete="off" class="layui-input">
+             </div>
+           </div>
+            <div class="layui-form-item">
+            <label class="layui-form-label">密码框</label>
+             <div class="layui-input-inline">
+             <input type="password" name="password" id="password" required lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+           </div>
+           <div class="layui-form-mid layui-word-aux">辅助文字</div>
+         </div>
+          <div class="layui-form-item">
+           <label class="layui-form-label">身份</label>
+          <div class="layui-input-block">
+            <select name="city" lay-verify="required">
+            <option value=""></option>
+            <option value="0">教师</option>
+             <option value="1">学生</option>
+             <option value="2">社团组织</option>
+            </select>
+          </div>
+          </div>
+          <div class="layui-form-item">
+             <label class="layui-form-label">姓名</label>
+            <div class="layui-input-block">
+             <input type="text" name="title" required  lay-verify="required" placeholder="请输入真实姓名" autocomplete="off" class="layui-input">
+             </div>
+           </div>
+        <div class="layui-form-item layui-form-text">
+      <label class="layui-form-label">文本域</label>
+       <div class="layui-input-block">
+          <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+      </div>
+      <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" type="button" onclick="zhuce()" lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+         </div>
+        </div>
+    </form>
+   </div>
+
+
+    </div>
+  </div>
+  <div class="bottom"></div>
+  <script>
+//Demo
+layui.use('form', function(){
+  var form = layui.form;
+  form.render()
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
+
+function zhuce(){
+  // ajax请求分为 get 和 post
+  // get 不传参 
+  // post 可以 
+  // $.get("zhuce.php", function(data){
+  //   alert("Data Loaded: " + data);
+  // });
+
+
+  /*$('#loginname') 是Jquery中的ID选择器。# 选取带有唯一的指定 id 的元素。id 引用 HTML 元素的 id 属性。*/
+  if ($('#loginname').val().length > 10) {
+    return false;
+  }
+  $.post("zhuce.php",{loginname:$('#loginname').val(),password:$('#password').val()},function(data){
+    // $('#loginname') == document.getElementById('loginname')
+    console.log($('#loginname').val())
+    alert(data)
+  })
+}
+</script>
+</body>
+</html>
